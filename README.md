@@ -57,4 +57,25 @@ The script automatically detects if CUDA is available and moves the model and te
 
 - You can adjust the `batch_size` in the `DataLoader` initialization within `train.py`.
 - For better flexibility, consider modifying `train.py` to accept dataset and output paths as command-line arguments.
+ 
+## TC-GAN CODE
 
+Before running, please update the file paths in `image_test.py` and `MDM.py` to match your local environment (e.g., dataset directory, model checkpoint path in `model/`, and output directory).
+
+**Steps:**
+
+1. Edit the paths in `image_test.py`, then run to generate intermediate images:
+
+   ```bash
+   python3 image_test.py
+   ```
+
+   This will output intermediate fusion images to `final_resutls/` (or the path specified in the script).
+
+2. Edit the paths in `MDM.py`, then run to generate final results:
+
+   ```bash
+   python3 MDM.py
+   ```
+
+   This will load the checkpoint from `model/` and output the final fused images to the specified directory.
