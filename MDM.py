@@ -3,7 +3,7 @@ from init import guidedfilter
 import time
 from PIL import Image
 import cv2 as cv
-import matplotlib.image as mpimg  # mpimg 用于读取图片
+import matplotlib.image as mpimg  
 import scipy.misc as misc
 import cv2
 import numpy as np
@@ -38,6 +38,7 @@ fusion = 0.5 * fusion + 0.5 * fusion1
 end = time.time()
 print(end - start)
 misc.imsave('AAAAA.png', fusion)                                            
+
 
 
 
