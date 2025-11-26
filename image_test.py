@@ -25,11 +25,11 @@ parser.add_argument('--num_epochs', default=1, type=int, help='train epoch numbe
 
 opt = parser.parse_args()
 
-CROP_SIZE = opt.crop_size #裁剪会带来拼尽问题嘛
-UPSCALE_FACTOR = opt.upscale_factor #上采样
-NUM_EPOCHS = opt.num_epochs #轮数
+CROP_SIZE = opt.crop_size 
+UPSCALE_FACTOR = opt.upscale_factor 
+NUM_EPOCHS = opt.num_epochs 
 
-val_set = TestDatasetFromFolder('D:/Dataset/', upscale_factor=UPSCALE_FACTOR) #测试集导入
+val_set = TestDatasetFromFolder('D:/Dataset/', upscale_factor=UPSCALE_FACTOR) 
 
 MODEL_NAME = 'netG_epoch_1_300.pth'
 netG = Generator(UPSCALE_FACTOR).eval()
@@ -38,10 +38,10 @@ netG.load_state_dict(torch.load('D:/Project/NewProject/ResNetFusion-master/model
 val_loader = DataLoader(dataset=val_set, num_workers=0, batch_size=1, shuffle=False)
 
 epoch =1
-out_path = 'D:/Dataset/results_' + str(UPSCALE_FACTOR) + '/'#输出路径
+out_path = 'D:/Dataset/results_' + str(UPSCALE_FACTOR) + '/'
 
 
-val_bar = tqdm(val_loader) #验证集的进度条
+val_bar = tqdm(val_loader) 
 val_images = []
 
 for val_lr , val_lr_restore, val_hr in val_bar:
